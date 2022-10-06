@@ -27,6 +27,9 @@
  - ## 3. Services. Dependency Injection Pattern.
 <details><summary>more info</summary>
 
-- [ ] [](https://angular.io/guide/binding-syntax).
+- [ ] [Dependency Injection Pattern](https://www.tektutorialshub.com/angular-tutorial/#services-dependency-injection):
+  - [video. Сервисы, внедрение зависимостей – Разбор механизма внедрения зависимостей](https://www.youtube.com/watch?v=fALKYP8voBQ),
+  - [video. Angular Dependency Injection – Understanding hierarchical injectors](https://www.youtube.com/watch?v=G8zXugcYd7o),
+  - [video. Angular dependency injection in depth – Dependency providers (2021)](https://www.youtube.com/watch?v=T1xmCC4y3xo)).
 
  </details>
