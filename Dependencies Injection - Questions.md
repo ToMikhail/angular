@@ -46,7 +46,9 @@ providers: [
 > Injector ищет dependency по token в providers по цепочке (вверх по дереву), начииная с элемента. Если не находит в ElementInjectors идет в ModuleInjector и затем еще выше в NullInjector. Если Dependency не обнаружена NullInjector выдает ошибку (Error);
 
 ### 3. Dependency;
-> Dependency обычно это экземпляр класса кторый мы создаем;
+> Dependency обычно это экземпляр класса кторый мы создаем. Dependencies хронятся в массиве provaders;
+
+
 - ## Question: Для чего нужен Dependecy Injections (DI)?
 
   -  *таким образом достигается гибкая архитектура, не допускается дублирование кода.
