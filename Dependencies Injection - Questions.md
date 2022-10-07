@@ -29,6 +29,7 @@ export class AppComponent {
 3.  Dependency => обычно это экземпляр класса кторый мы создаем.
 
 ### 1. Provider
+![](https://www.tektutorialshub.com/wp-content/uploads/2017/01/Angular-Provider.png);  
 **Provider** - это обект вида {token<Type Token, string token & Injection Token>: name, recipe(useClass, useExisting, UseFactory, useValue: ....)}. For example:
 ~~~
 providers: [
@@ -52,7 +53,7 @@ providers: [
 > ссылается на объект данныч а не на класс (value, array, object), как обычно. Когда нужно внести какие то данные кторые должны иметь зависимость. Обычно это какие либо данные или cofig.
 - #### useFactory:
 > Реализует функцию по которой вернется экземпляр service класса  или значение.
-![](https://www.tektutorialshub.com/wp-content/uploads/2017/01/Angular-Provider.png)
+
 
 ### 2. Injector
 > **Injector** - это обстракция через кторую строится взаимодействие между потребителями (consumer) и поставщтками (provider) зависимости (dependency) может быть 2 типов (ElemenInjector and ModulInjector).
