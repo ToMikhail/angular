@@ -38,6 +38,13 @@ providers: [
   }
 ]
 ~~~
+
+Angular Dependency Injection предоставляет 4 типа провайдеров:
+1. Class Provider : useClass
+1. Value Provider: useValue
+1. Factory Provider: useFactory
+1. Aliased Class Provider: useExisting.
+
 - #### useClass:
 > Если token name совпадает с именем класса который используетяс можно сделать короткую запись (shortcut). For example:
 ```
@@ -47,12 +54,45 @@ providers: [
 > useClass создает экземплар класса, ктороый мы указываем в поле recipe. 
 
 - #### useExisting:
-> При содании dependecy будет ссылаться на сущ. класс.
+> При содании dependecy будет ссылаться на экземпляр уже сущ. класса.
 
 - #### useValue:
-> ссылается на объект данныч а не на класс (value, array, object), как обычно. Когда нужно внести какие то данные кторые должны иметь зависимость. Обычно это какие либо данные или cofig.
+> ссылается на объект данныч а не на класс (value, array, object), как обычно. Когда нужно внести какие то данные кторые должны иметь зависимость. Обычно это какие либо данные или cofig (URL, API). В конструктор класса тогда добавляется декортатор @Inject(). For example:  
+```
+....
+  providers: [
+    {
+      provide: 'FUNC',
+      useValue: () => {
+        return 'hello';
+      }
+    }
+  ]
+}
+
+export class AppComponent {
+  constructor(
+    @Inject('FUNC') public someFunc: any
+  ) {
+    console.log(someFunc());
+  }
+}
+```
 - #### useFactory:
-> Реализует функцию по которой вернется экземпляр service класса  или значение.
+> Реализует функцию по которой вернется экземпляр service класса  или значение. Обычно мы используем useFactory, когда хотим вернуть объект на основе определенного условия. При использовании useFactory вводится 3 свойство в провайдер зависимости - deps( это массив использванных в функции параметорв(классов)).  
+> For example:
+```
+  providers: [
+    { provide: LoggerService, useClass: LoggerService },
+    { provide: 'USE_FAKE', useValue: true },
+    {
+      provide: ProductService,
+      useFactory: (USE_FAKE, LoggerService) =>
+        USE_FAKE ? new FakeProductService() : new ProductService(LoggerService),
+      deps: ['USE_FAKE', LoggerService]
+    }
+  ]
+```
 
 
 ### 2. Injector
