@@ -38,8 +38,8 @@ providers: [
 
 ### 2. Injector
 > **Injector** - это обстракция через кторую строится взаимодействие между потребителями (consumer) и поставщтками (provider) зависимости (dependency) может быть 2 типов (ElemenInjector and ModulInjector).
-> - ElemenInjector - создается для каждого элемента кторый имеет зависимостию
-> - ModulInjector - создается на уровне модуля.
+> - #### ElemenInjector - создается для каждого элемента кторый имеет зависимостию
+> - #### ModulInjector - создается на уровне модуля.
 >
 >
 > Injector ищет dependency по token в providers по цепочке (вверх по дереву), начииная с элемента. Если не находит в ElementInjectors идет в ModuleInjector и затем еще выше в NullInjector. Если Dependency не обнаружена NullInjector выдает ошибку (Error);
