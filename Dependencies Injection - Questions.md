@@ -6,7 +6,22 @@
 })
 ```
 Лучше указывать Dependecies через декортатор @Injectable() в самом файле компонента, чем прописывать это модуле, т.к. Angular производит процедуру tree-shake под капотом и если dependency не используется то она н епойдет в сборку проекта.  
-Если service прописан в drivers  через 'root', то он является singlton
+Если service прописан в drivers  через 'root', то он является singlton.  
+Example DI:
+```
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  providers: [LocalCounterService]
+})
+
+export class AppComponent {
+
+  constructor(public localCounterService: LocalCounterService) {}
+  
+}
+```
 
   - *DI состоит из:*
 1.  Provider;
@@ -46,7 +61,7 @@ providers: [
 > Injector ищет dependency по token в providers по цепочке (вверх по дереву), начииная с элемента. Если не находит в ElementInjectors идет в ModuleInjector и затем еще выше в NullInjector. Если Dependency не обнаружена NullInjector выдает ошибку (Error);
 
 ### 3. Dependency;
-> Dependency обычно это экземпляр класса кторый мы создаем. Dependencies хронятся в массиве provaders;
+> Dependency обычно это экземпляр класса кторый мы создаем. Dependencies хронятся в массиве providers;
 
 
 - ## Question: Для чего нужен Dependecy Injections (DI)?
