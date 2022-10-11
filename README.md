@@ -43,7 +43,7 @@
   Существует 2 подхода реализации форм:  
   
 1. Шаблонный подход (template driven forms);
-1. Реактивный подход (Reactive forms);
+1. Реактивный подход (Reactive forms). Через controls - это экземпляры класса FornControl, FormGroup, FormArray, FormBuilder;
 
 Различия между template-driven forms и Reactive forms:  
 - *Reactive forms* - sync, *template-driven forms* - async; 
@@ -52,13 +52,14 @@
 - *Reactive forms* - гибкость настроек;
 
 Валидатор (validator) - это функция которая возращает функцию (ValidatorFn) которая получает control и синхронно возвращает карту ошибок проверки, если они есть, в противном случае — null.
+  
 Валидаторы (validator) для форм бывают:
   
-  - встроенные(built-in) - required, email, pattern и minLength;
-  - пользовательский (custom validators);
-и
-  - async;
-  - sync;
+  * встроенные (built-in) - required, email, pattern и minLength;
+  * пользовательский (custom validators);  
+  и
+  * async;
+  * sync;
   
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/forms.md)
 
