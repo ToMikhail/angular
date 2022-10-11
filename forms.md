@@ -71,3 +71,21 @@ For example:
 * valid - когда пройдена валидация;
 * invalid - когда не пройдена валидация;
 * pending - когда ждем ответа от валидатора
+
+## Создание простого пользовательского (custom validators)
+Example sync custom validator:
+```
+  static restrictedEmail(control: FormControl): {[key:string]: boolean} | null {
+    if (['test@gmail.com', 'test2@gmail.com']) {
+      return {restrictedEmail: true}
+    }
+    return null
+  }
+```
+
+Example async custom validator:
+```
+  static uniqEmail(control: FormControl): Promise<any> | Observable<any> || null {
+    return new Promise()
+  }
+```
