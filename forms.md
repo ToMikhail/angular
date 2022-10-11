@@ -143,7 +143,8 @@ example.component.html
 
         <small *ngIf="form.get('password')?.errors?.required">can't be empty</small>
         <small *ngIf="form.get('password')?.errors?.minlength">
-          length should be more than {{ form.get('password')?.errors?.minlength.requiredLength}} now is {{ form.get('password')?.errors?.minlength.actualLength }}
+          length should be more than {{ form.get('password')?.errors?.minlength.requiredLength}}. 
+          Now is {{ form.get('password')?.errors?.minlength.actualLength }}
         </small>
 
       </div>
