@@ -111,7 +111,7 @@ For example:
 
 Для того что бы связать form c html необходимо добавить [ngFormGroup]="form", где ащкь переменная в модели (.ts). И так же необходимо добавить (ngSubmit)="submit()" - для отправки и получения данных из формы.  
 
-For example:
+For example:  
 example.component.html
 ```
 ...
