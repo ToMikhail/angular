@@ -114,12 +114,128 @@ For example:
 For example:  
 example.component.html
 ```
-...
 <div class="container">
   <form class="card" [formGroup]="form" (ngSubmit)="submit()">
-...
+    <h1>Forms and validation</h1>
+
+    <div class="form-control">
+      <label>Email</label>
+      <input type="text" placeholder="Email" formControlName="email">
+
+      <pre>{{ form.get('email')?.errors | json }}</pre> // просто для вывода информации (не нужно писать) 
+
+      <div class="validation"
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        <small *ngIf="form.get('email')?.errors?.required">can't be empty</small>
+        <small *ngIf="form.get('email')?.errors?.email">enter correct Email</small>
+        <small *ngIf="form.get('email')?.errors?.restrictedEmail">enter it is prohibited</small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label>Password</label>
+      <input type="password" placeholder="Password" formControlName="password">
+
+      <pre>{{ form.get('password')?.errors | json }}</pre>
+
+      <div class="validation"
+      *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+
+        <small *ngIf="form.get('password')?.errors?.required">can't be empty</small>
+        <small *ngIf="form.get('password')?.errors?.minlength">
+          length should be more than {{ form.get('password')?.errors?.minlength.requiredLength}} now is {{ form.get('password')?.errors?.minlength.actualLength }}
+        </small>
+
+      </div>
+    </div>
+
+    <div class="card" formGroupName="address">
+      <h2>Address</h2>
+
+      <div class="form-control">
+
+        <label>Country</label>
+        <select formControlName="country">
+          <option value="by">Belarus</option>
+          <option value="ru">Russia</option>
+          <option value="ua">Ukraine</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <input type="text" placeholder="City" formControlName="city">
+      </div>
+
+      <button class="btn" type="button"  (click)="setCapital()">Choose capital</button>
+    </div>
+
+
+    <div class="card" formArrayName="skills">
+
+      <h2>Your skills</h2>
+      <button class="btn" type="button" (click)="addSkill()">Add skill</button>
+
+      <div class="form-control"
+        *ngFor="let control of skills.controls; let i = index">
+        <label>Skill {{ i + 1 }}</label>
+        <input type="text" [formControlName]="i">
+      </div>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
 ```
 example.component.ts
 ```
+export class FormsAndValidationsComponent implements OnInit {
+  form: FormGroup
 
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      email: new FormControl('', [
+        Validators.email,
+        Validators.required,
+      ]),
+      password: new FormControl('', [Validators.minLength(6), Validators.required]),
+
+      address: new FormGroup({
+        country: new FormControl('by'),
+        city: new FormControl('', [Validators.required])
+      }),
+
+      skills: new FormArray([])
+    })
+  }
+
+  submit() {
+    this.form.reset();
+  }
+  setCapital() {
+    type NewType = {
+      [key: string]:string
+    }
+
+    const cityMap: NewType = {
+      by: 'Minsk',
+      ua: 'Kiev',
+      ru: 'Moskva'
+    }
+
+    const cityKey:string = this.form.get('address')?.get('country')?.value
+    const city = cityMap[cityKey]
+
+    this.form.patchValue({address: {city: city}})
+  }
+
+  addSkill(): void {
+    const control = new FormControl('', Validators.required);
+    // (<FormArray>this.form.get('skills')).push(control)
+    (this.form.get('skills') as FormArray).push(control)
+  }
+
+  get skills() {
+    return (this.form.controls['skills'] as FormArray)
+  }
+}
 ```
