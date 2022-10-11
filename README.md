@@ -40,6 +40,6 @@
   - ## 4. Forms and Validation.
 <details><summary>more info</summary>
 
-- [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/Dependencies%20Injection%20-%20Questions.md)
+- [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/forms.md)
 
  </details>
