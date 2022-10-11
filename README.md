@@ -64,3 +64,12 @@
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/forms.md)
 
  </details>
+ 
+ 
+   - ## 5. Working with Server.
+<details><summary>more info</summary>
+  
+  
+- [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/working-with-server.md)
+
+ </details>
