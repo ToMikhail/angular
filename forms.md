@@ -62,7 +62,7 @@ For example:
   * **pattern**
   * и т.д.
 
-Взаимодействие с валидаторами состояния INPUT.
+Взаимодействие с валидаторами состояния INPUT (Статусы состояния(Кдассы в html в браузере)).
 Валидаторы имеют следующие состояния:  
 * pristine - когда еще ничего не вводили;
 * dirty - когда что то ввели;
@@ -73,7 +73,10 @@ For example:
 * pending - когда ждем ответа от валидатора
 
 ## Создание простого пользовательского (custom validators)
-Example sync custom validator:
+
+Для создание пользовательского валидатора необходимо создать функцию, т.к. валидатор это всегда функция (можно создовать в компоненте, или в самом класса компонента, либо вынести в отдельный файл в отдельный класс).
+
+1. Example ***sync*** custom validator:
 ```
   static restrictedEmail(control: FormControl): {[key:string]: boolean} | null {
     if (['test@gmail.com', 'test2@gmail.com']) {
@@ -83,9 +86,39 @@ Example sync custom validator:
   }
 ```
 
-Example async custom validator:
+2. Example ***async*** custom validator:
 ```
   static uniqEmail(control: FormControl): Promise<any> | Observable<any> || null {
     return new Promise()
   }
+```
+Async Validators создаются, например, для проверки Email на сервере (существует такой или нет).  
+Async Validators передаются в FormControl 3 парпметром.
+For example:
+```
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      email: new FormControl('', [
+        Validators.email,
+        Validators.required
+      ]),
+      [MyValidators.uniqEmail]
+    )
+  }
+```
+
+## Методы для взаимодействия с Controls
+
+Для того что бы связать form c html необходимо добавить [ngFormGroup]="form", где ащкь переменная в модели (.ts). И так же необходимо добавить (ngSubmit)="submit()" - для отправки и получения данных из формыю
+For example:
+example.component.html
+```
+...
+<div class="container">
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+...
+```
+example.component.ts
+```
+
 ```
