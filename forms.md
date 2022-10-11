@@ -124,7 +124,7 @@ For example:
 
 Метод ***get()***. Реактивные формы позволяют обращаться к отдельному полю используя метод get(), которому передается в виде строки наименование поля(form.get('email')).
 
-Отслеживание изменений формы осуществляется через подписку на valueChanges Observable. Функция обработчик принимает параметром значение формы.  
+***valueChanges***.Отслеживание изменений формы осуществляется через подписку на valueChanges Observable. Функция обработчик принимает параметром значение формы.  
 For example: 
 ```
 this.form.valueChanges.subscribe((v) => {
@@ -138,6 +138,50 @@ this.form.get('login').valueChanges.subscribe((v) => {
   console.log(v)
 })
 ```
+
+***statusChanges***. Для отслеживания изменения статуса поля или формы в целом "подписывайтесь" на ***statusChanges***.
+```
+this.form.statusChanges.subscribe((status) => {
+  console.log(status)
+})
+```
+
+***reset()***. Для сброса значений полей формы или полей одной из ее групп используется метод reset(), который принимает объект с начальным значением.
+
+```
+//Всем полям будет присвоено null
+this.form.reset()
+//Полю login будет присвоено 'default_login', остальным - null
+this.form.reset({ login: 'default_login' })
+```
+
+Для динамического изменения структуры Angular reactive forms предусмотрен ряд методов:
+
+1. ***addControl(name: string, value: any)*** — добавляет новое поле соответствующей группе;
+1. ***setControl(name: string, value: any)*** — заменяет уже существующее поле соответствующей группы;
+1. ***removeControl(name: string)*** — удаляет поле из группы.
+1. ***patchValue()*** и ***setValue()***
+Для задания форме значений, например, при редактировании данных, полученных от сервера, используются методы patchValue() и setValue().
+
+***setValue()***. Методу setValue() должен передаваться объект, полностью совпадающий по строению с описанной моделью формы, а patchValue() — лишь часть этой структуры.
+```
+this.loginForm.patchValue({ login: 'user123' })
+this.loginForm.setValue({
+  login: 'user123',
+  password: 'pwd123',
+})
+
+```
+Если setValue() передать "неполную" модель, будет сгенерирована ошибка.
+
+Вторым параметром оба метода принимают объект, с помощью которого, например, можно сделать так, чтобы установка значения Angular reactive forms не инициировала событие valueChanges.
+```
+this.form.patchValue(
+  { login: 'user123' },
+  { emitEvent: false }
+)
+```
+
 Для того что бы связать form c html необходимо добавить [ngFormGroup]="form", где ащкь переменная в модели (.ts). И так же необходимо добавить (ngSubmit)="submit()" - для отправки и получения данных из формы. 
 
 For example:  
