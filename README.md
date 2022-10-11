@@ -39,7 +39,27 @@
  
   - ## 4. Forms and Validation.
 <details><summary>more info</summary>
+  
+  Существует 2 подхода реализации форм:  
+  
+1. Шаблонный подход (template driven forms);
+1. Реактивный подход (Reactive forms);
 
+Различия между template-driven forms и Reactive forms:  
+- *Reactive forms* - sync, *template-driven forms* - async; 
+- *Reactive forms* - управление происходит в класса модели (component). Богатая API. *template-driven form* - управление происходит в шаблоне (в html)(фактически 2-way binding ( [(ngModel)]='var'));
+- *Reactive forms*- для сложных форм. *template-driven form* - для протсоых форм;
+- *Reactive forms* - гибкость настроек;
+
+Валидатор (validator) - это функция которая возращает функцию (ValidatorFn) которая получает control и синхронно возвращает карту ошибок проверки, если они есть, в противном случае — null.
+Валидаторы (validator) для форм бывают:
+  
+  - встроенные(built-in) - required, email, pattern и minLength;
+  - пользовательский (custom validators);
+и
+  - async;
+  - sync;
+  
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/forms.md)
 
  </details>
