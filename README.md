@@ -69,7 +69,7 @@
    - ## 5. Working with Server
 
 <details><summary>more info</summary>
-  
+     
 ***HttpClient***
   
   Общение" с сервером Angular осуществляет через REST-подобные запросы. За это отвечает HttpClientModule.  
