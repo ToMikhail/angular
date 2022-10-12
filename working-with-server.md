@@ -157,7 +157,7 @@ export class ContactsService {
 
 ### Обработка ошибок
 
-  При работе с HttpClient есть можество путей обработать ошибку.
+  При работе с HttpClient есть можество путей обработать ошибку.  
   1 способ. У метода subscribe(callback1 - удачный ответ с сервера(response); *callback2 - возращает ошибку, где мы ее можем обработать:* callback3 - когда stream  закончился). =>
   ```
   http.get('link').subscribe(res => {}, error => {})
