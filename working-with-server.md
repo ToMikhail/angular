@@ -1,7 +1,7 @@
 # Working with Server
 
   
-  ##HttpClient
+  ## HttpClient
   
   Общение" с сервером Angular осуществляет через REST-подобные запросы. За это отвечает HttpClientModule.  
   В компонент или сервис (в зависимости от построения архитектуры) импортируется сервис HttpClient.  
