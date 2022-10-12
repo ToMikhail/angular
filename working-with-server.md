@@ -98,7 +98,17 @@ deleteAccountByID(id: number | string){
 
 ***delete()*** используется для удаления записи. В своем использовании он схож с GET. Оба метода не имеют тела запроса, а данные передают в строке запроса.
 
+### Обработка ошибок
 
+  При работе с HttpClient есть можество путей обработать ошибку.
+  1 способ. У метода subscribe(callback1 - удачный ответ с сервера(response); *callback2 - возращает ошибку, где мы ее можем обработать:* callback3 - когда stream  закончился). =>
+  ```
+  http.get('link').subscribe(res => {}, error => {})
+  ```
+  2 способ. Передать в методе pipe(catchError(err => {return throwError(error)}))
+  ```
+  return http('link').pipe(catchError(err => { return throwError(error) }))
+  ```
 
 
 #### Cвойства в конфигурации
