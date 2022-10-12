@@ -69,6 +69,22 @@
    - ## 5. Working with Server.
 <details><summary>more info</summary>
   
+  **HttpClient**
+  Общение" с сервером Angular осуществляет через REST-подобные запросы. За это отвечает HttpClientModule.  
+  В компонент или сервис (в зависимости от построения архитектуры) импортируется сервис HttpClient.  
+  
+  For example:
+  ```
+  
+  @Injectable()
+export class DataService {
+  constructor(private http: HttpClient) {}
+}
+
+  ```
+  
+  В архитектуре REST API используются разные методы HTTP запросов. Основные - GET, POST, PUT и DELETE.
+  >Все методы сервиса HttpClient возвращают тип Observable. Это означает, что если при вызове метода, который должен сделать HTTP-запрос, не вызвать метод subscribe(), то ничего не произойдет. Методу subscribe() можно передавать две функции-обработчика, первая выполнится в случае успешного ответа от сервера, вторая - в случае ошибки.
   
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/working-with-server.md)
 
