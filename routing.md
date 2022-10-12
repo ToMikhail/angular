@@ -95,11 +95,13 @@ export class AppRoutingModule {}
     bootstrap: [AppComponent],
     exports: []
 })
+```
+
 Компоненты, на которые указывает Angular routing, подгружаются в место, где указана директива <router-outlet></router-outlet>.
 
 Для маршрутов, находящихся на самом верхнем уровне иерархии (LoginRouteComponent и HomeRouteComponent), родительским служит компонент, указанный в поле bootstrap.
 
-
+```
 <div class="wrapper">
   <app-nav></app-nav>
 
