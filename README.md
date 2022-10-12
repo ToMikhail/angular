@@ -66,7 +66,7 @@
  </details>
  
  
-   - ## 5. # Working with Server
+   - ## 5. Working with Server
 
 <details><summary>more info</summary>
 ***HttpClient***
@@ -117,8 +117,7 @@ intercept() модифицирует исходный запрос и возвр
 
  </details>
  
- 
-  - ## 5. # Working with Server
+  - ## 6. Routing
 
 <details><summary>more info</summary>
 
