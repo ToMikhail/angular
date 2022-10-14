@@ -159,7 +159,7 @@ export default class AppRoutingModule {}
     * Resolve - выполняет какое-либо действие перед переходом на маршрут, обычно ожидает данные от сервера - 6-й проверятеся;;
     * CanLoad - разрешает/запрещает загрузку модуля, загружаемого асинхронно - 2-й проверятеся;.
   
-Можно задать много guards для route.
+  Можно задать много guards для route.
   
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/routing.md)
 
