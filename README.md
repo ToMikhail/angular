@@ -128,7 +128,7 @@ intercept() модифицирует исходный запрос и возвр
   ***routes*** - это массив объектов [{},{},{}] со свойствами path: 'путь до строницы', component: имя класса отвечающего за компонент, (это обязательные), и по требованию свойство children: с массивом обхектов (дочерних страниц).   
   Вместо component может идти свойство  ***redirectTo*** c указанием страницы (route) куда необходимо перенаправить в случае неверног гзадание ссылки (ошибка в пути).
   
-  ```
+```
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent, children: [
@@ -144,7 +144,7 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export default class AppRoutingModule {}
-  ```
+```
   
   * Регестрируем созданный модуль с app.module.ts в imports [];
   * В app.component.html => прописывается тег <router-outlet>
