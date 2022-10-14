@@ -147,7 +147,7 @@ export default class AppRoutingModule {}
 ```
   
   * Регестрируем созданный модуль с app.module.ts в imports [];
-  * В app.component.html => прописывается тег <router-outlet>
+  * В app.component.html => прописывается тег **router-outlet**
   
 - Guards (Route Guards)  - позволяют ограничить доступ к маршрутам на основе определенного условия, например, только авторизованные пользователи с определенным набором прав могут просматривать страницу.
   
