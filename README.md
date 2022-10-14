@@ -121,7 +121,32 @@ intercept() модифицирует исходный запрос и возвр
   - ## 6. Routing
 
 <details><summary>more info</summary>
+- Порядок создания routing:
+  * Создаем компоненты страницы приложения (страницы или routes);
+  * создаем routing модуль, который содержит @NgModule декоратор со свойствами ***imports*** и ***exports***. И в imports передаем пути для строниц (routes).
+  ***routes*** - это массив объектов [{},{},{}] со свойствами path: 'путь до строницы', component: имя класса отвечающего за компонент, (это обязательные), и по требованию свойство children: с массивом обхектов (дочерних страниц).   
+  Вместо component может идти свойство кувшкус
+  
+  ```
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'about', component: AboutComponent, children: [
+    {path: 'extra', component: AboutExtraComponent}
+  ]},
+  {path: 'posts', component: PostsComponent},
+  {path: 'posts/:id', component: PostComponent},
+  {path: '**', redirectTo: ''},
+]
 
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export default class AppRoutingModule {}
+  ```
+  
+  * Регестрируем созданный модуль с app.module.ts в imports [];
+  * В app.component.html => 
   
 - Guards (Route Guards)  - позволяют ограничить доступ к маршрутам на основе определенного условия, например, только авторизованные пользователи с определенным набором прав могут просматривать страницу.
   
