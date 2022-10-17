@@ -177,7 +177,7 @@ export default class AppRoutingModule {}
   
   
     - ## 7. Modules
-
+  
 <details><summary>more info</summary>
   
   Angular имеет модеульную архитектуру, в отличии от React(компонентную). Масшиабиаемость 
