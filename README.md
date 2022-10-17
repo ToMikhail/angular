@@ -176,7 +176,7 @@ export default class AppRoutingModule {}
  </details>
   
   
-    - ## 6. Modules
+    - ## 7. Modules
 
 <details><summary>more info</summary>
   
