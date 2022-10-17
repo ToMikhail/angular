@@ -173,10 +173,10 @@ export default class AppRoutingModule {}
   
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/routing.md)
 
- </details>
+</details>
   
   
-    - ## 7. Modules
+  - ## 7. Modules
   
 <details><summary>more info</summary>
   
