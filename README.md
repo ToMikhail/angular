@@ -174,3 +174,64 @@ export default class AppRoutingModule {}
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/routing.md)
 
  </details>
+  
+  
+    - ## 6. Modules
+
+<details><summary>more info</summary>
+  
+  Angular имеет модеульную архитектуру, в отличии от React(компонентную). Масшиабиаемость 
+  
+  Для создания отдетного модуля создаем файл .module.ts в ктором @NgModule  - декортатор и класс.
+  
+```
+@NgModule({
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    HomeComponent,
+    PostsComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+  
+  - declorations: - это массив где решистрируются все компоненты, директивы и пайрыж
+  - imports: - это массив, куда импартируются другие модули(BrowserModule? FormsModule, свои созданные модулиж
+  - providers - это массив , где регистриуются сервисыж
+  - bootstrap - для главного компонента приложения (точка входа).
+  
+  Для общих сущностей которые используются в разных модулях создается отдельный модуль(обычно в папке shared). Сущности заносятся в declorations (массив) и возвращаются в exports (массив). Затем в imports (массиве) зарегестрировать shared модуль app. и др.
+  
+  Метод forRoots(routes) - только для app.module;
+  Метод forChild(routes) - используется для остальных модулей приложения при маршрутизации.
+  
+  Для оптимизации и декомпозирования элементов.
+  
+  Lasy loading - отложенная загрузка.
+  
+  При работе с разбивкой на модули есть возможность разбивики на части (на chunks). Позволит загружать сначала необходимый для рендеринга компоненет, а при переходе будет загружать тоже необходимый компонет(chunk)
+  
+  В  app-routing.module.ts доббваить объект с path: '...' и loadChildren: 'link#classModule(класс модуля)'. Новый синтаксиси позволяет передовать функцию (стрелочную):
+  
+  ```
+  loadChildren: () => import('link').then(m => m.AboutPageModule)
+  ```
+  
+  ***Изменить стратегию загрузки*** в app.modile.ts необходимо в app.module.ts
+  
+  ```
+  imports: [
+    RouterModule.forRout(routes),
+    {preLoadingStrategy:PreloadingAllModules}
+  ]
+  ```
+  
+  
+ </details>
