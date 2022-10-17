@@ -229,9 +229,19 @@ export class AppModule { }
   ```
   imports: [
     RouterModule.forRout(routes),
-    {preLoadingStrategy:PreloadingAllModules}
+    {preLoadingStrategy:PreloadingAllModules (или noPreloading)}
   ]
   ```
+  
+    Это позволяет изменить загрузку компонентов. В первую очередьзагрузятся все необходимые компоеннеты для рендеринга, а после все остальные (для роутинга). Что бы можно было перехолдить через ссылки без перезагрузок.
+  
+  
+ </details>
+
+  
+  - ## 7. RxJS Basics
+  
+<details><summary>more info</summary>
   
   
  </details>
