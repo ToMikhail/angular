@@ -239,7 +239,7 @@ export class AppModule { }
  </details>
 
   
-  - ## 7. RxJS Basics
+  - ## 8. RxJS Basics
   
 <details><summary>more info</summary>
   
