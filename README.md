@@ -325,19 +325,18 @@ sbj.next(9);
     - zip - выдает массив значений после получения поаледнего;
     - combineLatest() - выдает массив последних значений стримов, при получении одного из них.   
   Операторы создания - Эти операторы позволяют создавать observable практически из чего угодно. От общих до конкретных вариантов использования вы можете и поощряете превращать все в поток.   
-    - of() - ;
-    - from() - ;
-    - fromEvent();
-    - interval() - 
+    - of() - выдает стрим переданных в него значений (строки, числа, массив и т.д.);
+    - from() - 1) для конвертации Promise в Observable. 2) для получения значений элементов переданного массива. 3) передванного объекта. Любых перебираемых итерируемых объектов;
+    - fromEvent() - Превратить событие в наблюдаемую последовательность ( const source = fromEvent(document, 'click'); );
+    - interval() - Выдавать числа последовательно в зависимости от предоставленного таймфрейма ( const source = interval(1000); )
   
-  ---
-  (Hot observable vs Cold Observable)[https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend]  
+  [Hot observable vs Cold Observable](https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend)  
   ***Cold Observable (lazy) (unicated)*** - начинают передовать данные только когда мы подпишимся(выполним метод subscribe()) на них. Каждый subscribe() создает отдельный контекст выполнения Observable (пример с получением Math.random - каждый subscribe() вернет разное значение). Создает и активирует данные в Observable;  
   ***Hot observeable (multycasted)*** - получают данные всегда, независмо сделали мы подписку или нет (subscribe()). Создает и активирует данные вне Observable;   
   ***Warm observeable (подогретый)*** - cold observable можно подогреть. Используя оператор multicasted() куда мы передвем Subject(). Затем объединяем два стрима с помощью метожа connect();   
-  ---
+  
   Из Promise в Observable можно перевести через оператор from()
-  ---
+  
   Разница между Promise и  observable   
   Promise выполнили один раз и уничтожили данные, Observable - это стрим , кторый можно использовать много раз.
   ---
