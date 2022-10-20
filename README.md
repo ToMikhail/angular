@@ -33,6 +33,9 @@
   - [video. Angular Dependency Injection – Understanding hierarchical injectors](https://www.youtube.com/watch?v=G8zXugcYd7o),
   - [video. Angular dependency injection in depth – Dependency providers (2021)](https://www.youtube.com/watch?v=T1xmCC4y3xo)).
 - [ ] [NOTES](https://github.com/ToMikhail/angular/blob/main/Dependencies%20Injection%20-%20Questions.md)
+- [ ] links: [promise vs obsrevable](https://www.youtube.com/watch?v=xCfLfKNbnco&ab_channel=DecodedFrontend);   
+             [RxJs switchMap vs mergeMap](https://www.youtube.com/watch?v=qYdKmYp95Jg&t=2s)   
+             [RxJs Operators - ExhaustMap vs concatMap](https://www.youtube.com/watch?v=nh13_aPRQ0Q&t=2s)
 
  </details>
  
