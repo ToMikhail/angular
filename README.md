@@ -243,5 +243,13 @@ export class AppModule { }
   
 <details><summary>more info</summary>
   
+  RxJS представляет собой библиотеку, позволяющую управлять всеми асинхронными операциями и событиями в приложении в стиле реактивного программирования. Мы можем подписаться на stream и отлавливать све что происходит с этим стриомом (все изменения)
+  
+  * Observable;
+  * Observer;
+  * Subject;
+  * Scheduler - пока не надо;
+  * Subscription;
+  * Operator.
   
  </details>
