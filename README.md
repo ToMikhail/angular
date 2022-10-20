@@ -236,7 +236,7 @@ export class AppModule { }
   ]
   ```
   
-    Это позволяет изменить загрузку компонентов. В первую очередьзагрузятся все необходимые компоеннеты для рендеринга, а после все остальные (для роутинга). Что бы можно было перехолдить через ссылки без перезагрузок.
+    Это позволяет изменить загрузку компонентов. В первую очередь загрузятся все необходимые компоеннеты для рендеринга, а после все остальные (для роутинга). Что бы можно было перехолдить через ссылки без перезагрузок.
   
   
  </details>
@@ -348,10 +348,17 @@ sbj.next(9);
   
 -  [ ] Как отписаться от стрима?   
   1. Отписаться от стрима через метод unsubscribe()[https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f];
-  1. Опрератор     
+  1. Опрераторы take() и first():     
+  * take(num) - где num - это количество получаемых входных данных;
+  * takeUntil(notifier);
+  * takeWhile(val => val < 5);
+  * first() - если без аргументов то выдаст первое приходящее значение. если first(val => val === 5) - получим только 5.
   
-    * take(num) - где num - это количество получаемых входных данных;
-    * takeUntil(notifier);
-    * takeWhile(val => val < 5);
-    * first() - если без аргументов то выдаст первое приходящее значение. если first(val => val === 5) - получим только 5
+- [ ] links:   
+https://www.youtube.com/watch?v=xCfLfKNbnco&ab_channel=DecodedFrontend   
+https://www.youtube.com/watch?v=qYdKmYp95Jg&t=2s&ab_channel=DecodedFrontend (HOO)   
+https://www.youtube.com/watch?v=nh13_aPRQ0Q&t=2s&ab_channel=DecodedFrontend (HOO)   
+https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend (Hot vs Cold)   
+https://rxjs.dev/guide/overview (Documentation)   
+https://rxviz.com/ (RxJS Sandbox)
  </details>
