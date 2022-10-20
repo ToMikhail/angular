@@ -348,7 +348,8 @@ sbj.next(9);
   
 -  [ ] Как отписаться от стрима?   
   1. Отписаться от стрима через метод unsubscribe()[https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f];
-  1. Опрератор 
+  1. Опрератор     
+  
     * take(num) - где num - это количество получаемых входных данных;
     * takeUntil(notifier);
     * takeWhile(val => val < 5);
