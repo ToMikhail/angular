@@ -245,7 +245,7 @@ export class AppModule { }
   
   RxJS представляет собой библиотеку, позволяющую управлять всеми асинхронными операциями и событиями в приложении в стиле реактивного программирования. Мы можем подписаться на stream и отлавливать све что происходит с этим стриомом (все изменения)
   
-  * Observable;
+  1. Observable;
   > Объекты RxJS Observable создаются либо с использованием операторов создания (of, from, fromEvent), либо через конструктор new Observable.
 
 Пример с оператором of().
@@ -268,7 +268,7 @@ const obs = new Observable((sub) => {
 obs.subscribe((vl) => console.log(vl));
   ```
   
-  * Observer;
+  2. Observer;
   >Observer — это объект у которго есть 3 метода (next, error и complete). - это потребитель (subscruber) значений, предоставляемых Observable. Observer — это просто набор обратных вызовов (callbacks funcs), по одному для каждого типа уведомления, доставляемого Observable: next, error и complete. Ниже приведен пример типичного объекта Observer:
   ```
       const observer = {
@@ -280,7 +280,7 @@ obs.subscribe((vl) => console.log(vl));
     obs.subscribe(observer);
   ```
   
-  * Subject
+  3. Subject
   >Subject является разновидностью объектов Observable. Особенность Subject в том, что он может отправлять данные одновременно множеству "потребителей" (multicasetd), которые могут регистрироваться уже в процессе исполнения Subject, в то время как исполнение стандартного Observable осуществляется уникально (uniquecasted) для каждого его вызова.   
   >Объекты RxJS Subject реализуют принцип работы событий, поддерживая возможность регистрировать неограниченное количество обработчиков отправляемых ими данных.
   
@@ -306,14 +306,14 @@ sbj.next(9);
     - ReplaySubject - способны хранить заданное количество последних значений, которое задается при создании объекта( new ReplaySubject(2) );
     - AsyncSubject - "потребителям" передается только последнее значение объекта и только, когда он завершит свое выполнение (вызов complete()).
   
-  * Scheduler - пока не надо;
-  * Subscription   
+  4. Scheduler - пока не надо;
+  5. Subscription   
   Subscription- это объект, который представляет одноразовый ресурс, обычно выполнение Observable. У подписки есть один важный метод, отмена подписки (unsibscribe()), который не принимает аргументов и просто удаляет ресурс, удерживаемый подпиской.
   Subscription, по сути, просто имеет функцию unsubscribe() для освобождения ресурсов или отмены выполнения Observable.
   
-  * Operator.     
+  6. Operator.     
   
-  Оперторов бывает очень много: 
+  * Оперторов бывает очень много: 
   Операторы высшего порядка(mergeMap, SwichMap, ExhaustMap, concatMap). Вложенные стримы
     - mergeMap(flatMap()) - Стрим содержит другие стримы, все стримы важны, если 1-й стрим не закончился, а 2-й начался, то пойдут данные из 2-го стрима, а потом вернуться к 1-му, и закончат его и перейдут ко второмуж
     - SwichMap - если при выполнении 1-го стрима начинается 2-й стрим, то главный стрим убивает 1-й стрим и переходит к выполнению 2-го и т.д.
@@ -330,17 +330,18 @@ sbj.next(9);
     - fromEvent() - Превратить событие в наблюдаемую последовательность ( const source = fromEvent(document, 'click'); );
     - interval() - Выдавать числа последовательно в зависимости от предоставленного таймфрейма ( const source = interval(1000); )
   
-  [Hot observable vs Cold Observable](https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend)  
-  ***Cold Observable (lazy) (unicated)*** - начинают передовать данные только когда мы подпишимся(выполним метод subscribe()) на них. Каждый subscribe() создает отдельный контекст выполнения Observable (пример с получением Math.random - каждый subscribe() вернет разное значение). Создает и активирует данные в Observable;  
+  [Hot observable vs Cold Observable](https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend)   
+  
+  [ ] ***Cold Observable (lazy) (unicated)*** - начинают передовать данные только когда мы подпишимся(выполним метод subscribe()) на них. Каждый subscribe() создает отдельный контекст выполнения Observable (пример с получением Math.random - каждый subscribe() вернет разное значение). Создает и активирует данные в Observable;  
   ***Hot observeable (multycasted)*** - получают данные всегда, независмо сделали мы подписку или нет (subscribe()). Создает и активирует данные вне Observable;   
   ***Warm observeable (подогретый)*** - cold observable можно подогреть. Используя оператор multicasted() куда мы передвем Subject(). Затем объединяем два стрима с помощью метожа connect();   
   
-  Из Promise в Observable можно перевести через оператор from()
+  [ ] Из Promise в Observable можно перевести через оператор from()
   
-  Разница между Promise и  observable   
-  Promise выполнили один раз и уничтожили данные, Observable - это стрим , кторый можно использовать много раз.
-  ---
-  Как отписаться от стрима?   
+  [ ] Разница между Promise и  observable   
+  Promise выполнили один раз и уничтожили данные, Observable - это стрим , кторый можно использовать много раз.   
+  
+  [ ] Как отписаться от стрима?   
   1. Отписаться от стрима через метод unsubscribe()[https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f];
   1. Опрератор 
     * take(num) - где num - это количество получаемых входных данных;
