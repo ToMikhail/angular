@@ -332,9 +332,9 @@ sbj.next(9);
 >    - fromEvent() - Превратить событие в наблюдаемую последовательность ( const source = fromEvent(document, 'click'); );
 >    - interval() - Выдавать числа последовательно в зависимости от предоставленного таймфрейма ( const source = interval(1000); )
   
-  [Hot observable vs Cold Observable](https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend)   
+-  [ ]  [Hot observable vs Cold Observable](https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend)   
   
--  [ ] ***Cold Observable (lazy) (unicated)*** - начинают передовать данные только когда мы подпишимся(выполним метод subscribe()) на них. Каждый subscribe() создает отдельный контекст выполнения Observable (пример с получением Math.random - каждый subscribe() вернет разное значение). Создает и активирует данные в Observable;  
+ ***Cold Observable (lazy) (unicated)*** - начинают передовать данные только когда мы подпишимся(выполним метод subscribe()) на них. Каждый subscribe() создает отдельный контекст выполнения Observable (пример с получением Math.random - каждый subscribe() вернет разное значение). Создает и активирует данные в Observable;  
   ***Hot observeable (multycasted)*** - получают данные всегда, независмо сделали мы подписку или нет (subscribe()). Создает и активирует данные вне Observable;   
   ***Warm observeable (подогретый)*** - cold observable можно подогреть. Используя оператор multicasted() куда мы передвем Subject(). Затем объединяем два стрима с помощью метожа connect();   
   
