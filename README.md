@@ -246,6 +246,28 @@ export class AppModule { }
   RxJS представляет собой библиотеку, позволяющую управлять всеми асинхронными операциями и событиями в приложении в стиле реактивного программирования. Мы можем подписаться на stream и отлавливать све что происходит с этим стриомом (все изменения)
   
   * Observable;
+  > Объекты RxJS Observable создаются либо с использованием операторов создания (of, from, fromEvent), либо через конструктор new Observable.
+
+Пример с оператором of().
+
+```
+of('Hello').subscribe((vl) => console.log(vl));
+  ```
+Пример с new Observable.
+
+```
+const obs = new Observable((sub) => {
+  sub.next(1);
+
+  setTimeout(() => {
+    sub.next(3);
+    sub.complete();
+  }, 500);
+});
+  
+obs.subscribe((vl) => console.log(vl));
+  ```
+  
   * Observer;
   * Subject;
   * Scheduler - пока не надо;
