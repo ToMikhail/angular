@@ -351,7 +351,7 @@ sbj.next(9);
   1. Отписаться от стрима через метод unsubscribe()[https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f];
   1. Опрераторы take() и first():     
   * take(num) - где num - это количество получаемых входных данных;
-  * takeUntil(notifier);
+  * takeUntil(notifier) => nitifier = new subject() и в методе ngOnDestroy{ notifier.next() и notifier.complete() };
   * takeWhile(val => val < 5);
   * first() - если без аргументов то выдаст первое приходящее значение. если first(val => val === 5) - получим только 5.
   
@@ -362,4 +362,5 @@ https://www.youtube.com/watch?v=nh13_aPRQ0Q&t=2s&ab_channel=DecodedFrontend (HOO
 https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend (Hot vs Cold)   
 https://rxjs.dev/guide/overview (Documentation)   
 https://rxviz.com/ (RxJS Sandbox)
+https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f (отписаться от стрима)
  </details>
