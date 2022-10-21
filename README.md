@@ -363,4 +363,5 @@ https://www.youtube.com/watch?v=oKqcL-iMITY&t=14s&ab_channel=DecodedFrontend (Ho
 https://rxjs.dev/guide/overview (Documentation)   
 https://rxviz.com/ (RxJS Sandbox)
 https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f (отписаться от стрима)
+https://www.learnrxjs.io/
  </details>
