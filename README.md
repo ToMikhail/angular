@@ -2,7 +2,22 @@
 - ## 1. Basics and Syntax. Components in Details.
 <details>
 <summary>more info</summary>
-
+1. *Binding данных*    
+  
+  * Односторонний от источника данных до цели просмотра. => Interpolation, Property, Attribute, Class, Style;  
+  ```
+  {{expression}} 
+  [target]="expression"
+  ```
+  * Односторонний от цели представления к источнику данных. => 
+  ```
+  (target)="statement"
+  ```
+  * Двусторонний => 
+  ```
+  [(target)]="expression"
+  ```
+  
 - [ ] [Data-Bindings (interpolation, one-way, two-way)](https://angular.io/guide/binding-syntax).
 - [ ] [Component Interaction](https://angular.io/guide/component-interaction).
 - [ ] [Lifecycle Hooks](https://angular.io/guide/lifecycle-hooks) (https://angdev.ru/doc/component-lifecycle/).
