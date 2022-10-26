@@ -365,3 +365,22 @@ https://rxviz.com/ (RxJS Sandbox)
 https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f (отписаться от стрима)
 https://www.learnrxjs.io/
  </details>
+  
+  
+  
+    - ## 8. Angular Unit Testing
+  
+<details><summary>more info</summary>
+Unit tests это самый первый этап тестирования приложения. Необходимость написания unit tests: 1- для дучшего понимания кода, 2 - ошибки выявляются на более раннем этапе.   
+  В Angular осуществляется при помощи JS фреймворка Jasmine и иснтрумента Karma.   
+  
+1. Karma
+  >  Karma - это инструмент, который позволяет нам создавать браузеры и запускать внутри них тесты Jasmine из командной строки. Результаты тестов также отображаются в командной строке.
+2. Jasmine 
+  > * spy (spyon callFake(создается фэйковая функция вместо настоящей с выводом ожидаемых значений)
+   )
+3. TestBed
+  >
+
+ 
+ </details>
