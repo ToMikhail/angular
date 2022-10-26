@@ -368,7 +368,7 @@ https://www.learnrxjs.io/
   
   
   
-    - ## 8. Angular Unit Testing
+    - ## 9. Angular Unit Testing
   
 <details><summary>more info</summary>
 Unit tests это самый первый этап тестирования приложения. Необходимость написания unit tests: 1- для дучшего понимания кода, 2 - ошибки выявляются на более раннем этапе.   
