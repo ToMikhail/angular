@@ -2,7 +2,7 @@
 - ## 1. Basics and Syntax. Components in Details.
 <details>
 <summary>more info</summary>
-1. *Binding данных*    
+1. Binding данных    
   
   * Односторонний от источника данных до цели просмотра. => Interpolation, Property, Attribute, Class, Style;  
   ```
@@ -29,6 +29,22 @@
   
 - ## 2. Directives. Pipes.
 <details><summary>more info</summary>
+  
+  2. Pipes    
+ >Pipe - это класс для изменения внешнего вида данных в шаблоне. В декортаторе есть поле name @Pipe({name: 'pipeName'})  
+  
+ > Pipes  могут быть: 
+ > - Pure(чистые) - отрабатывают на изменения ссылки;
+ > - Impure(нечистые) - это async;
+  
+ > Что бы сделать из Pure Impure Pipe неоьбходимо добавиьт поле pure: false  в декортаторе
+  
+  Создание собственных pipe   
+  > Необходимо implements класс от PipeTransform и метод в нем transform. 
+  
+  Какие бывают встроенные pipes (доступны благодоря BroserModule in app.module.ts):   
+  * {var | number | uppercase | lowercase | titlecase | slice:a:5 | percent | cerncy | date:'long' | async}
+  
 
 - [ ] [Directive Types (attribute, structural) ](https://angular.io/guide/attribute-directives).
 - [ ] [ng-container](https://angular.io/api/core/ng-container), [ng-template](https://angular.io/api/core/ng-template).
