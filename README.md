@@ -1,3 +1,4 @@
+# [JS](https://github.com/ToMikhail/interview-FEDev)
 # angular
 - ## 1. Basics and Syntax. Components in Details.
 <details>
