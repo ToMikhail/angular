@@ -30,23 +30,26 @@
   
 - ## 2. Directives. Pipes.
 <details><summary>more info</summary>
-  1. Directives   
+  1. Directives    
+  
   >Directives обычно используются для работы с шаблоном. 
   >Сущуствуют следующие типы Directives:  
-    - аттрибутные Directives (ngClass, ngStyle) - для работы с внемшним видом шаблона;
-    - структурные Directives(*ngFor, *ngIf, *ngSwitch(ngSwitchCase, gnSwitchDefault)) - директивы которые влияют на отрисовку шаблона.
+  > - аттрибутные Directives (ngClass, ngStyle) - для работы с внемшним видом шаблона;   
+  > - структурные Directives(*ngFor, *ngIf, *ngSwitch(ngSwitchCase, gnSwitchDefault)) - директивы которые влияют на отрисовку шаблона.
   
-  <ng-container><ng-template>(*ngIf)   
-  >Блок else отрисовывается в теге <ng-container>. Попадает в DOM в виде коментария.   
-  >Задать тегу 2 структурные директивы нельзя. Поэтому появляется <ng-container> - что бы не заграмаждать шаблон
-    ```
+  ng-template(*ngIf)
+  >тег ng-template - по умолчанию не отрисовывается на  странице
+  >Блок else отрисовывается в теге ng-template. Попадает в DOM в виде коментария.   
+  ng-container(*ngIf)   
+  >Задать тегу 2 структурные директивы нельзя. Поэтому появляется тег ng-container - что бы не заграмаждать шаблон
+ ```
     <ng-container *ngIf="condition; else templateA">
       …
     </ng-container>
     <ng-template #templateA>
       …
     </ng-template>
-    ```
+ ```
   2. Pipes    
  >Pipe - это класс для изменения внешнего вида данных в шаблоне. В декортаторе есть поле name @Pipe({name: 'pipeName'})  
   
